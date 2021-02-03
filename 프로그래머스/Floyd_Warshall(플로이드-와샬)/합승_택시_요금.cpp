@@ -1,4 +1,3 @@
-// 2021_카카오 : 합승_택시_요금.cpp
 #include <queue>
 #include <vector>
 #include <utility>
@@ -9,6 +8,7 @@ using namespace std;
 
 int dist[201][201];
 
+// 2021_카카오 : 합승_택시_요금.cpp
 int solution(int n, int s, int a, int b, vector<vector<int>> fares) {
 	for (int i = 1; i <= n; i++) {
 		for (int j = 1; j <= n; j++) {
@@ -36,8 +36,10 @@ int solution(int n, int s, int a, int b, vector<vector<int>> fares) {
 
 	int answer = dist[s][a] + dist[s][b];
 	for (int i = 1; i <= n; i++) {
-		int route = dist[s][i] + dist[i][a] + dist[i][b];
-		answer = min(answer, route);
+		if(s != i){
+            int route = dist[s][i] + dist[i][a] + dist[i][b];
+		    answer = min(answer, route);
+        }
 	}
 
 	return answer;

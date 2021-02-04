@@ -6,7 +6,6 @@
 #include <algorithm>
 #include <cstdio>
 using namespace std;
-#define MAX 100001
 
 struct endAsc {
 	bool operator()(pair<int, int> a, pair<int, int> b) {

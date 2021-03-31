@@ -11,7 +11,7 @@ int solution(vector<int> scoville, int K) {
     
     // 오름차순 우선순위 큐
     priority_queue<int, vector<int>, greater<int>> pq;
-    int cnt = scoville.size(); // 총 음식 개수
+    //int cnt = scoville.size(); // 총 음식 개수
     for(auto s : scoville) pq.push(s);
     
     while(pq.size() > 1){

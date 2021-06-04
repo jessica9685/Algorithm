@@ -1,4 +1,4 @@
-// 프로그래머스 - 스택/큐 : 다리를_지나는_트럭.cpp
+// 프로그래머스 : 스택/큐 - 다리를_지나는_트럭.cpp
 #include <string>
 #include <vector>
 #include <queue>

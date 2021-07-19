@@ -1,4 +1,5 @@
 // 1062_가르침.cpp
+// 다른 방법 - 비트마스킹
 #define _CRT_SECURE_NO_WARNINGS
 #include <bits/stdc++.h>
 using namespace std;

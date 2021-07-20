@@ -10,6 +10,11 @@ typedef struct {
 	int time; // 처음 게시된 시간
 } Photo;
 
+/* 정렬 */
+/*
+reference type을 사용하는 경우, Heap 영역을 사용하는 우선순위 큐보다는 정렬을 추천
+(우선순위 큐는 reference type 변수를 갱신할 때 문제가 발생할 수 있음)
+*/
 bool comp(Photo a, Photo b) {
 	// 추천수가 같으면
 	if (a.rec == b.rec) {

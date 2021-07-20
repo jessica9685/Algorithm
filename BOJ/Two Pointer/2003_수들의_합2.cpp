@@ -36,7 +36,7 @@ int main() {
 			left++; // left 이동
 			if (left > right) { // 범위를 넘어가면
 				right = left; // right를 left로 초기화
-				if (left < n) sum = seq[left];
+				if (right < n) sum = seq[right];
 			}
 		}
 	}

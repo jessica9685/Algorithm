@@ -1,4 +1,6 @@
 // 2003_수들의_합2.cpp
+// Two Pointer (Sliding Window)
+// 시간복잡도 : O(N)
 #define _CRT_SECURE_NO_WARNINGS
 #include <bits/stdc++.h>
 using namespace std;

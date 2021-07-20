@@ -26,7 +26,7 @@ int main() {
 	}
 
 	ll left = 0;
-	ll right = MAX;
+	ll right = x;
 	ll result = 0;
 	int rate = z;
 
@@ -47,7 +47,7 @@ int main() {
 		}
 	}
 
-	if (result > MAX) result = -1;
+	if (result > x) result = -1;
 	printf("%lld\n", result);
 	return 0;
 }

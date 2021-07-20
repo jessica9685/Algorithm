@@ -3,6 +3,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define MAX 1000000000
+/*
+	추가로 할 수 있는 게임 횟수의 최대값
+	= 98%를 99%로 올리기 위해 필요한 게임 횟수
+	= x
+	(ex. x = 50, y = 49 -> 98%
+		(x + y) / (x + x) * 100 = 99%)
+*/
 
 typedef long long ll;
 

@@ -22,32 +22,29 @@ int main() {
 
 	if (z >= 99) {
 		printf("-1\n");
-		return 0;
 	}
+	else{
+		ll left = 0;
+		ll right = x;
+		int rate = z;
 
-	ll left = 0;
-	ll right = x;
-	ll result = 0;
-	int rate = z;
+		while (left < right) {
+			ll mid = (left + right) / 2;
 
-	while (left <= right) {
-		ll mid = (left + right) / 2;
+			ll total = x + mid;
+			ll win = y + mid;
 
-		ll total = x + mid;
-		ll win = y + mid;
+			rate = (win * 100) / total;
 
-		rate = (win * 100) / total;
-
-		if (rate <= z) { // 승률이 오르지 않았으면
-			result = mid + 1;
-			left = mid + 1;
+			// 승률이 작아지는 경우는 없기 때문에 rate == z로 해도 무방
+			if (rate <= z) { // 승률이 오르지 않았으면
+				left = mid + 1;
+			}
+			else { // 승률이 오르면
+				right = mid;
+			}
 		}
-		else { // 승률이 오르면
-			right = mid - 1;
-		}
+		printf("%lld\n", right);
 	}
-
-	if (result > x) result = -1;
-	printf("%lld\n", result);
 	return 0;
 }

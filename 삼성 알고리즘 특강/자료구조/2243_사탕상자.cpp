@@ -11,18 +11,6 @@ vector<ll> seq;
 vector<ll> tree;
 int s; // leaf의 개수 (첫 leaf의 인덱스)
 
-// tree 만들기
-void init() {
-	// leaf에 값을 넣기
-	for (int i = s, j = 1; i < s + n, j <= n; i++, j++) {
-		tree[i] = seq[j];
-	}
-	// 내부노드 채우기
-	for (int i = s - 1; i > 0; i--) {
-		tree[i] = tree[i * 2] + tree[i * 2 + 1];
-	}
-}
-
 /* Top-Down 방식 */
 ll query(int left, int right, int node, int cnt) {
 	// 원하는 사탕을 찾았을 경우(리프를 찾을 경우)

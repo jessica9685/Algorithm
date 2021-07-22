@@ -55,7 +55,7 @@ void update(int left, int right, int node, int target, ll diff) {
 }
 
 /* Bottom-Up 방식 */
-void updateBU(int target, int value) {
+void updateBU(int target, ll value) {
 	// leaf에서 target을 찾음
 	int node = s + target - 1;
 	// value 변경

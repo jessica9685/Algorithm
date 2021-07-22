@@ -41,10 +41,9 @@ int main() {
 		RtoL[i] = gcd(RtoL[i + 1], numbers[i]);
 	}
 
-	// 초기값: 첫번째 수를 뺐을 때
+	// 초기값
 	ll maxGcd = 0;
 	ll removed = -1;
-
 	for (int i = 0; i < n; i++) {
 		ll result = 0;
 		if (i == 0) result = RtoL[1];

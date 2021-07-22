@@ -74,11 +74,13 @@ ll queryBU(int queryLeft, int queryRight) {
 	int right = s + queryRight - 1;
 	ll sum = 0;
 	while (left <= right) { // equal 반드시 포함
-		// left node가 홀수이면(오른쪽 자식) 현재 노드값 사용하고 한칸 옆으로
+		// left node가 홀수이면 현재 노드값 사용하고 한칸 옆으로
+		// 자식 하나만 query 범위에 포함될 경우
 		if (left % 2 == 1) {
 			sum += tree[left++];
 		}
 		// right node가 짝수(왼쪽자식)이면 현재 노드값 사용하고 한칸 옆으로
+		// 자식 하나만 query 범위에 포함될 경우
 		if (right % 2 == 0) {
 			sum += tree[right--];
 		}

@@ -22,12 +22,13 @@ void init() {
 	}
 }
 
+/* Top-Down 방식 */
 ll query(int left, int right, int node, int queryLeft, int queryRight) {
 	// 범위 밖 -> 결과에 영향이 없는 값(0) return
 	if (left > queryRight || right < queryLeft) return 0;
 	// 범위 안 -> 현재 노드 값 return
 	else if (left >= queryLeft && right <= queryRight) {
-		return tree[node]; 
+		return tree[node];
 	}
 	// 범위 걸쳐있는 경우
 	else {
@@ -48,9 +49,45 @@ void update(int left, int right, int node, int target, ll diff) {
 		if (left != right) {
 			int mid = (left + right) / 2;
 			update(left, mid, node * 2, target, diff);
-			update(mid + 1, right, node * 2 + 1, target, diff);    
+			update(mid + 1, right, node * 2 + 1, target, diff);
 		}
 	}
+}
+
+/* Bottom-Up 방식 */
+void updateBU(int target, int value) {
+	// leaf에서 target을 찾음
+	int node = s + target - 1;
+	// value 변경
+	tree[node] = value;
+	// root에 도달할 때까지 부모에 값 반영
+	node /= 2;
+	while (node > 0) {
+		tree[node] = tree[node * 2] + tree[node * 2 + 1];
+		node /= 2;
+	}
+}
+
+ll queryBU(int queryLeft, int queryRight) {
+	// leaf에서 left, right 설정
+	int left = s + queryLeft - 1;
+	int right = s + queryRight - 1;
+	ll sum = 0;
+	while (left <= right) { // equal 반드시 포함
+		// left node가 홀수이면(오른쪽 자식) 현재 노드값 사용하고 한칸 옆으로
+		if (left % 2 == 1) {
+			sum += tree[left++];
+		}
+		// right node가 짝수(왼쪽자식)이면 현재 노드값 사용하고 한칸 옆으로
+		if (right % 2 == 0) {
+			sum += tree[right--];
+		}
+		// left, right 모두 부모로 이동
+		left /= 2;
+		right /= 2;
+	}
+
+	return sum;
 }
 
 int main() {

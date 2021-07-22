@@ -8,7 +8,7 @@ typedef long long ll;
 int n, m, k;
 vector<ll> seq;
 vector<ll> tree;
-int s; // 첫 leaf의 인덱스
+int s; // 첫 leaf의 인덱스 (leaf의 개수)
 
 // tree 만들기
 void init() {

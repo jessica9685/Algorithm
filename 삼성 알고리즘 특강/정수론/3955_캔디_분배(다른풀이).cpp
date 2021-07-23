@@ -79,7 +79,7 @@ int main() {
 			// 					 k < -x0 / B
 			ll kFromY = (ll)ceil((double)y0 / (double)A) - 1;
 			ll kFromX = (ll)ceil((double)(-x0) / (double)B) - 1;
-			ll k = min(kFromX, kFromY);
+			ll k = min(kFromX, kFromY); // k는 여러개일 수도 있지만 k의 최대값을 구하자
 			y = y0 - A * k;
 			if (y <= 1e9) printf("%lld\n", y);
 			else printf("IMPOSSIBLE\n");

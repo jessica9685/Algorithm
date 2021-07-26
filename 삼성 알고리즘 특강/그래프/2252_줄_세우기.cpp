@@ -5,25 +5,23 @@ using namespace std;
 #define MAX 32000 + 1
 
 int n, m;
-vector<int> inStudent[MAX];
-vector<int> outStudent[MAX];
+vector<int> student[MAX];
 
 int main() {
 	scanf("%d %d", &n, &m);
 
+	vector<int> inDegree(n + 1, 0);
 	while (m--) {
 		int a, b;
 		scanf("%d %d", &a, &b);
 		
-		inStudent[b].push_back(a);
-		outStudent[a].push_back(b);
+		student[a].push_back(b);
+		inDegree[b]++;
 	}
 
 	queue<int> q;
-	vector<int> inDegree(n + 1, 0);
 	vector<int> result;
 	for (int i = 1; i <= n; i++) {
-		inDegree[i] = inStudent[i].size();
 		// 진입차수가 0인 정점 큐에 삽입
 		if (inDegree[i] == 0) q.push(i);
 	}
@@ -34,10 +32,10 @@ int main() {
 		q.pop();
 
 		// 연결된 간선 제거
-		for (int i = 0; i < outStudent[node].size(); i++) {
-			inDegree[outStudent[node][i]]--; 
+		for (int i = 0; i < student[node].size(); i++) {
+			inDegree[student[node][i]]--; 
 			// 만약 진입차수가 0이면 큐에 삽입
-			if (inDegree[outStudent[node][i]] == 0) q.push(outStudent[node][i]);
+			if (inDegree[student[node][i]] == 0) q.push(student[node][i]);
 		}
 	}
 

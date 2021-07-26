@@ -1,4 +1,5 @@
 // 1922_네트워크_연결.cpp
+// 크루스칼 알고리즘
 #define _CRT_SECURE_NO_WARNINGS
 #include <bits/stdc++.h>
 using namespace std;
@@ -42,6 +43,7 @@ int main() {
 	scanf("%d", &m);
 	
 	// cost 오름차순 정렬 우선순위 큐
+	// priority queue 말고 그냥 벡터로 정렬해도 상관 x
 	priority_queue<edge, vector<edge>, comp> pq;
 	// 부모 초기화
 	parent.resize(n + 1, 0);

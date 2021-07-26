@@ -40,8 +40,10 @@ void unionSet(int a, int b) {
 int main() {
 	scanf("%d", &n);
 	scanf("%d", &m);
-
+	
+	// cost 오름차순 정렬 우선순위 큐
 	priority_queue<edge, vector<edge>, comp> pq;
+	// 부모 초기화
 	parent.resize(n + 1, 0);
 	for (int i = 1; i <= n; i++) parent[i] = i;
 

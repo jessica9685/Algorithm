@@ -3,7 +3,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define MAX 500 + 1
-#define INF 999999999
+#define INF 999999999 
+// INF + INF인 경우가 있기 때문에 INF = INT_MAX / 2보다 작게 설정해야 함.
 
 int n, m; 
 

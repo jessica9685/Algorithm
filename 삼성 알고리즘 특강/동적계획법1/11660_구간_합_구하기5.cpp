@@ -1,4 +1,4 @@
-// 11659_구간_합_구하기5.cpp
+// 11660_구간_합_구하기5.cpp
 #define _CRT_SECURE_NO_WARNINGS
 #include <bits/stdc++.h>
 using namespace std;

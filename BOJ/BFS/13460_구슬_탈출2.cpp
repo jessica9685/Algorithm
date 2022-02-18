@@ -29,7 +29,7 @@ pair<int, int> move(pair<int, int> ball, int& c, int dir) {
 
 int main() {
 	scanf("%d %d", &n, &m);
-
+	
 	pair<int, int> red, blue;
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < m; j++) {

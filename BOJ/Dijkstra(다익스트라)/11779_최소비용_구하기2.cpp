@@ -1,4 +1,4 @@
-// 11779_최소비용_구하기2
+// 11779_최소비용_구하기2.cpp
 #include <bits/stdc++.h>
 using namespace std;
 #define INF 100000001

@@ -22,8 +22,12 @@ int main()
         int answer = 0;
         for(int i = 2; i < n - 2; i++){
             // [i-2] ~ [i+2] 비교
-            int maxLen = max(max(building[i - 2], building[i - 1]), 
-                            max(building[i + 1], building[i + 2]));
+            int maxLen = 0;
+            for(int j = i - 2; j <= i + 2; j++){
+                if(j == i) continue;
+                maxLen = max(maxLen, building[j]);
+            }
+
             if(maxLen > building[i]) continue;
             
             answer += (building[i] - maxLen);

@@ -38,7 +38,10 @@ int main()
             if(scanner.find('1') == -1) continue;
 
             // 맨 뒤에서부터 1을 탐색 (모든 암호코드는 1로 끝남)
-            // newCode = scanner.substr(scanner.rfind('1') - 55, 56);
+            /*  
+                아래 코드와 같음.
+                newCode = scanner.substr(scanner.rfind('1') - 55, 56);
+            */
             for(int pos = scanner.size() - 1; pos >= 55; pos--){
                 if(scanner[pos] == '1'){
                     newCode = scanner.substr(pos - 55, 56);

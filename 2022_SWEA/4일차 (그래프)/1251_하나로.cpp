@@ -85,7 +85,7 @@ int main()
         // 가중치 기준 오름차순 정렬
         sort(graph.begin(), graph.end(), comp);
 
-        double answer = 0.0;
+        double answer = 0;
         for(auto edge : graph){
             int pa = find(edge.start);
             int pb = find(edge.end);

@@ -49,8 +49,8 @@ void dfs(int idx, int cnt, int color) {
 			if (y % 2 == 1 && x % 2 == 1) continue;
 		}
 
-		// 아직 방문하지 않았고, 비숍을 놓을 수 있으면
-		if (!visited[y][x] && isPossible(y, x)) {
+		// 비숍을 놓을 수 있으면
+		if (isPossible(y, x)) {
 			visited[y][x] = true;
 			dfs(i + 1, cnt + 1, color);
 			visited[y][x] = false; // 백트래킹

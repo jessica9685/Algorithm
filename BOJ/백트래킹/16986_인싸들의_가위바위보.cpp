@@ -4,7 +4,7 @@
 using namespace std;
 
 int n, k;
-int table[10][10];
+int rps[10][10];
 
 bool isWin = false; // 지우가 우승하면 true
 int win[3] = { 0, 0, 0 }; // 지우, 경희, 민호 이긴 횟수
@@ -39,7 +39,7 @@ void dfs(int p1, int p2) {
 			hand[0][turn[0]] = i;
 		}
 
-		int res = table[hand[p1][turn[p1]]][hand[p2][turn[p2]]];
+		int res = rps[hand[p1][turn[p1]]][hand[p2][turn[p2]]];
 		int winner;
 
 		if (res == 2) winner = p1;
@@ -67,9 +67,7 @@ int main() {
 	scanf("%d %d", &n, &k);
 	for (int i = 1; i <= n; i++) {
 		for (int j = 1; j <= n; j++) {
-			int res;
-			scanf("%d", &res);
-			table[i][j] = res;
+			scanf("%d", &rps[i][j]);
 		}
 	}
 

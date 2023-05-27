@@ -10,7 +10,7 @@ int w, h;
 char board[MAX][MAX];
 vector<pair<int, int>> endpoint; // C 2칸 위치
 int dist[MAX][MAX];
-bool visited[MAX][MAX][4] = {false, };
+bool visited[MAX][MAX][4] = {false, }; // 중복 방문 체크
 int dy[4] = {-1, 0, 1, 0}; // up, right, down, left
 int dx[4] = {0, 1, 0, -1};
 

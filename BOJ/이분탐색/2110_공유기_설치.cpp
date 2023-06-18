@@ -1,49 +1,55 @@
 // 2110_공유기_설치.cpp
-#define _CRT_SECURE_NO_WARNINGS
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
+typedef long long ll;
+
 int n, c;
-vector<int> home;
+vector<ll> house;
 
 int main() {
-	scanf("%d %d", &n, &c);
-	for (int i = 0; i < n; i++) {
-		int x;
-		scanf("%d", &x);
-		home.push_back(x);
-	}
-	sort(home.begin(), home.end());
+    freopen("input.txt", "r", stdin);
 
-	int left = 0; // 최소 간격
-	int right = home[n - 1] - 1; // 최대 간격
-	int ans = 0; // 가장 인접한 공유기 간격 최댓값
+    scanf("%d %d", &n, &c);
 
-	while (left <= right) {
-		// 1번째 집에는 무조건 공유기 설치
-		int start = home[0];
-		int router = 1; // 공유기 개수
-		int mid = (left + right) / 2;
+    for(int i = 0; i < n; i++){
+        ll x;
+        scanf("%lld", &x);
+        house.push_back(x);
+    }
 
-		for (int i = 1; i < n; i++) {
-			int end = home[i];
+    sort(house.begin(), house.end());
 
-			// 두 공유기간 간격이 mid 이상이면
-			if (end - start >= mid) {
-				router++;
-				start = end;
-			}
-		}
+    ll left = 0; // 1번째 공유기 ~ 1번째 공유기 사이 간격
+    ll right = house[n - 1] - house[0]; // 1번째 공유기 ~ 마지막 공유기 사이 간격
+    ll ans = 0; // 가장 인접한 간격 최댓값
 
-		// 설치된 공유기 개수가 c개 이상이면
-		if (router >= c) {
-			ans = max(ans, mid);
-			left = mid + 1;
-		}
-		// c개 미만이면
-		else right = mid - 1;
-	}
+    while(left <= right){
+        // 첫 번째 집에는 무조건 공유기 설치
+        ll start = house[0];
+        int cnt = 1; // 설치한 공유기 개수
+        
+        ll mid = (left + right) / 2; // 기준 간격
 
-	printf("%d\n", ans);
-	return 0;
+        for(int i = 1; i < n; i++){
+            ll end = house[i];
+
+            if(end - start >= mid){
+                cnt++;
+                start = end;
+            }
+        }
+
+        // 설치된 공유기 개수가 c개 이상이면 
+        if(cnt >= c){
+            ans = max(ans, mid); // ans 갱신
+            left = mid + 1;
+        }
+        else right = mid - 1;
+    }
+
+    printf("%d\n", ans);
+    return 0;
 }

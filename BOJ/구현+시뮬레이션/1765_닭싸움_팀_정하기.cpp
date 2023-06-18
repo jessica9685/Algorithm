@@ -3,12 +3,12 @@
 #include <cstring>
 #include <algorithm>
 using namespace std;
-#define MAj 40
+#define MAX 40
 
 int n, m, k;
 int r, c;
 
-int board[MAj][MAj];
+int board[MAX][MAX];
 int sticker[10][10];
 
 // 스티커 회전하기

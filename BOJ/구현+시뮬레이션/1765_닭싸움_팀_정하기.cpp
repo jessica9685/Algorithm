@@ -1,4 +1,4 @@
-// 1765_닭싸움_팀_정하기.cpp
+// 18808_스티커_붙이기.cpp
 #include <iostream>
 #include <cstring>
 #include <algorithm>

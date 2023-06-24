@@ -52,14 +52,13 @@ void dijkstra(int start){
             if(dist[next.dst][next.cost] <= next.time) continue;
 
             dist[next.dst][next.cost] = next.time;
+            pq.push(next);
 
             // dist 갱신
             for(int i = next.cost + 1; i <= m; i++){
                 if(dist[next.dst][i] <= next.time) break;
                 dist[next.dst][i] = next.time;
             }
-            
-            pq.push(next);
         }
     }
 }
